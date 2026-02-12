@@ -19,13 +19,12 @@ pipeline {
     stage('Build') {
       steps {
         sh 'npm ci'
-        sh 'npm run build'`
+        sh 'npm run build'
       }
     }
 
     stage('Deploy') {
       steps {
-         sh 'echo Deploying..............'
           sh 'npm install -g vercel@latest'
           // Deploy using token-only (non-interactive)
           sh '''
